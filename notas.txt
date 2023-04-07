@@ -9,3 +9,12 @@ devtools::install_github('hadley/devtools')
 install.packages('roxygen2')
 install.packages('testthat')
 install.packages('knitr')
+
+## Verifique se seu ambiente está pronto
+devtools::has_devel()
+
+usethis::use_git("Preparação do ambiente")
+
+usethis::create_package(path = ".", rstudio = FALSE, open = FALSE)
+
+usethis::use_git("Criação da esqueleto do pacote")
