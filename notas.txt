@@ -1,0 +1,11 @@
+## No terminal
+sudo apt-get install build-essential 
+sudo apt-get install r-base-devel
+sudo apt-get install libharfbuzz-dev libfribidi-dev
+
+## No RStudio
+install.packages('devtools')
+devtools::install_github('hadley/devtools')
+install.packages('roxygen2')
+install.packages('testthat')
+install.packages('knitr')
