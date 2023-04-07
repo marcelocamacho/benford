@@ -15,6 +15,18 @@ devtools::has_devel()
 
 usethis::use_git("Preparação do ambiente")
 
+## Para criação do diretório /R, DESCRIPTION, e NAMESPACE; O parâmetro rstudio é para que ele não crie o Rproj(que já foi criado) já é para que ele não precise reabirir em um novo projeto.
 usethis::create_package(path = ".", rstudio = FALSE, open = FALSE)
 
 usethis::use_git("Criação da esqueleto do pacote")
+
+## Cria o diretório /tests e altera o DESCRIPTION(colocando o thatthat como suggest)
+usethis::use_testthat()
+
+usethis::use_git("Adiciona o testthat e cria o diretório para organizar os testes")
+
+## adiciona as dependências
+usethis::use_package('ggplot2')
+usethis::use_package('magrittr')
+usethis::use_package('dplyr')
+usethis::use_package('tdiyr')
