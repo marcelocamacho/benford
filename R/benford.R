@@ -3,6 +3,8 @@
 #' Esta função lê um vetor de números inteiros e testa se
 #' vale a lei de benford para esses números.
 #'
+#' Histórico sobre a Lei de Benford.
+#'
 #'@param x Vetor de inteiros
 #'
 #'@return uma lista com estatística, valor-p,
