@@ -1,3 +1,9 @@
+#' Lei de benford
+#'
+#' Esta função lê um vetor de números inteiros e testa se
+#' vale a lei de benford para esses números.
+#'
+#'
 benford <-function(x) {
  freq_obs <- table(substr(as.character(x),1,1))
  N <- sum(freq_obs)
