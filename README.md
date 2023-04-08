@@ -21,6 +21,12 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(benford)
-## basic example code
+x <- sample(1:10000,1000)
+
+res <- benford(x)
+
+plot.benford(res)
 ```
 
+Fonte: Palestra apresentada no [YouTube](https://youtu.be/AUjFGd1O8Y0)
+Créditos: Julio Trecenti
