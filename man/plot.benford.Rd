@@ -4,10 +4,12 @@
 \alias{plot.benford}
 \title{Plota o gráfico para a Lei de Benford}
 \usage{
-\method{plot}{benford}(x)
+\method{plot}{benford}(x, ...)
 }
 \arguments{
 \item{x}{resultado da função \code{\link{benford}}}
+
+\item{...}{outros parametros opcionais}
 }
 \description{
 Gráfico de barras

@@ -37,10 +37,11 @@ benford <-function(x) {
 #'Utiliza o pacote ggplot2
 #'
 #'@param x resultado da função \code{\link{benford}}
+#'@param ... outros parametros opcionais
 #'
 #'@import ggplot2
 #'@export
-plot.benford <- function(x){
+plot.benford <- function(x,...){
  d <- dplyr::as_tibble(x[-c(1:2)])
  d <- dplyr::add_rownames(d)
  d <- dplyr::mutate(d, rowname= as.numeric(rowname))
