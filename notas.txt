@@ -23,10 +23,42 @@ usethis::use_git("Criação da esqueleto do pacote")
 ## Cria o diretório /tests e altera o DESCRIPTION(colocando o thatthat como suggest)
 usethis::use_testthat()
 
+## Add o tipo de licença no DESCRIPTION e altera o arquivo LICENSE.md (no entanto, o Github já havia add o arquivo LICENSE)
+usethis::use_mit_license()
+
 usethis::use_git("Adiciona o testthat e cria o diretório para organizar os testes")
 
-## adiciona as dependências
+## adiciona as dependências obrigatórias
 usethis::use_package('ggplot2')
 usethis::use_package('magrittr')
 usethis::use_package('dplyr')
-usethis::use_package('tdiyr')
+usethis::use_package('tidyr')
+
+## adiciona dependências sugeridas
+usethis::use_package('caret',type = 'Suggests')
+
+## Apesar de já existir o README.md já que o projeto foi criado inicialmente pelo gitHub é possível sobrescrever com a estrutura/esqueleto recomendado pelo r
+usethis::use_readme_md()
+
+## Dá o commit das alterações realizadas até aqui
+usethis::use_git("Alterações oriundas do use_package que provocaram alterações no DESCRIPTION. O uso do template do README.md foi o sugerido pelo comando use_readme_md")
+
+## para que as alterações possam ser enviadas para o gitHub é necessário criar um token
+usethis::create_github_token()
+
+#Copie o token gerado e salve com o comando
+gitcreds::gitcreds_set()
+
+## Verifique as suas configurações de GIT:
+usethis::git_sitrep()
+
+## Criando o código
+usethis::use_r('benford')
+
+##Criando o teste
+usethis::use_test()
+
+## Carregando e testando o pacote
+devtools::document()
+devtools::load_all()
+devtools::check()
