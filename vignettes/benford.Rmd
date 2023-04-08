@@ -1,5 +1,6 @@
 ---
-title: "benford"
+title: "Lei de Benford"
+author: "Marcelo S. Camacho"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{benford}
@@ -14,6 +15,11 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Como usar
+
 ```{r setup}
 library(benford)
+
+x <- sample(10000,100)
+benford(x)
 ```
