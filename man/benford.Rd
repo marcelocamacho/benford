@@ -6,6 +6,13 @@
 \usage{
 benford(x)
 }
+\arguments{
+\item{x}{Vetor de inteiros}
+}
+\value{
+uma lista com estatística, valor-p,
+frequências observadas e esperadas.
+}
 \description{
 Esta função lê um vetor de números inteiros e testa se
 vale a lei de benford para esses números.

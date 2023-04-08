@@ -3,6 +3,10 @@
 #' Esta função lê um vetor de números inteiros e testa se
 #' vale a lei de benford para esses números.
 #'
+#'@param x Vetor de inteiros
+#'
+#'@return uma lista com estatística, valor-p,
+#'frequências observadas e esperadas.
 #'
 benford <-function(x) {
  freq_obs <- table(substr(as.character(x),1,1))
