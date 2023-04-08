@@ -17,3 +17,6 @@ frequências observadas e esperadas.
 Esta função lê um vetor de números inteiros e testa se
 vale a lei de benford para esses números.
 }
+\details{
+Histórico sobre a Lei de Benford.
+}
