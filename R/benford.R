@@ -9,7 +9,7 @@
 #'
 #'@return uma lista com estatística, valor-p,
 #'frequências observadas e esperadas.
-#'
+#'@export
 benford <-function(x) {
  freq_obs <- table(substr(as.character(x),1,1))
  N <- sum(freq_obs)
@@ -27,4 +27,25 @@ benford <-function(x) {
         )
  class(res) <- 'benford'
  res
+}
+
+
+#'Plota o gráfico para a Lei de Benford
+#'
+#'Gráfico de barras
+#'
+#'Utiliza o pacote ggplot2
+#'
+#'@param x resultado da função \code{\link{benford}}
+#'
+#'@import ggplot2
+#'@export
+plot.benford <- function(x){
+ d <- dplyr::as_tibble(x[-c(1:2)])
+ d <- dplyr::add_rownames(d)
+ d <- dplyr::mutate(d, rowname= as.numeric(rowname))
+ d <- dplyr::select(d, -freq_obs)
+ d <- tidyr::gather(d,tipo_prop,prop,-rowname)
+ ggplot(d, aes(x=rowname, y=prop, fill=tipo_prop)) +
+  geom_bar(stat = 'identity',position = 'dodge')
 }
