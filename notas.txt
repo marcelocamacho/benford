@@ -59,6 +59,11 @@ usethis::use_r('benford')
 usethis::use_test()
 
 ## Carregando e testando o pacote
-devtools::document()
-devtools::load_all()
 devtools::check()
+devtools::load_all()
+
+## Documentando
+devtools::document()
+
+## Gerando páginas de documentação em HTML, RMD etc
+usethis::use_vignette('benford')
